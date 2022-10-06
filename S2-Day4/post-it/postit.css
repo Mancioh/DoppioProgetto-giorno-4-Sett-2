@@ -1,0 +1,132 @@
+body {
+    background-color: #666666;
+    font-family: 'Indie Flower', cursive;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+    /* ----------GRID---------- */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 40px;
+    grid-row-gap: 40px;
+    padding: 3%;
+    margin: 5%;
+    }
+
+.grid div {
+    box-shadow: 1px 1px 10px black;
+    width:310px;
+    height: 240px;
+}
+    
+    .div1 { grid-area: 1 / 1 / 2 / 2; }
+    .div2 { grid-area: 1 / 2 / 2 / 3; }
+    .div3 { grid-area: 1 / 3 / 2 / 4; }
+    .div4 { grid-area: 1 / 4 / 2 / 5; }
+
+    .div5 { grid-area: 2 / 1 / 3 / 2; }
+    .div6 { grid-area: 2 / 2 / 3 / 3; }
+    .div7 { grid-area: 2 / 3 / 3 / 4; }
+    .div8 { grid-area: 2 / 4 / 3 / 5; }
+
+    .giallo, .verde, .viola {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-size: 3em;
+        line-height: 1.5em;
+    }
+
+    .giallo p, .verde p, .viola p {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-weight: bold;
+    }
+
+    /* ----------GRID COLORS---------- */
+    .verde {
+        background: #afffb3;
+        background: linear-gradient(180deg, #afffb3 0%, #a8ff59 52%, #5cf94a 100%);
+    }
+
+    .giallo {
+        background: #ffffaf;
+        background: linear-gradient(180deg, #ffffaf 0%, #fcff59 52%, #f9d34a 100%);
+    }
+
+    .viola {
+        background: #fdafff;
+        background: linear-gradient(180deg, #fdafff 0%, #ff26fa 52%, #c200fc 100%);
+    }
+
+    /* ----------ANIMAZIONI---------- */
+    .giallo, .viola {
+        rotate: -5deg;
+    }
+
+    .verde {
+        rotate: 5deg;
+    }
+    /* animazione rotazione giallo-viola */
+    @keyframes g-tilt-in {
+        from {rotate: -5deg; scale: 1;}
+        to {rotate: -0deg; scale: 1.3;}
+          
+    }
+
+    @keyframes g-tilt-out {
+        from {rotate: -0deg; scale: 1.3;}
+        to {rotate: -5deg; scale: 1;}
+          
+    }
+
+    .div1:hover,.div3:hover,.div6:hover, .div5:hover, .div7:hover {
+        animation: g-tilt-in 1s;
+        -webkit-animation: g-tilt-in 1s;
+        -moz-animation: g-tilt-in 1s;
+        -o-animation: g-tilt-in 1s;
+    }
+
+    .div1, .div3, .div5, .div6, .div7 {
+        animation: g-tilt-out 1s;
+        -webkit-animation: g-tilt-out 1s;
+        -moz-animation: g-tilt-out 1s;
+        -o-animation: g-tilt-out 1s;
+    }
+    
+    /* animazione rotazione verde*/
+    @keyframes tilt-in {
+        from {rotate: 5deg; scale: 1;}
+        to {rotate: 0deg; scale: 1.3;}
+          
+    }
+
+    @keyframes tilt-out {
+        from {rotate: 0deg; scale: 1.3;}
+        to {rotate: 5deg; scale: 1;}
+          
+    }
+
+    .div2:hover, .div4:hover, .div8:hover {
+        animation: tilt-in 1s;
+        -webkit-animation: tilt-in 1s;
+        -moz-animation: tilt-in 1s;
+        -o-animation: tilt-in 1s;
+    }
+
+    .div2, .div4, .div8 {
+        animation: tilt-out 1s;
+        -webkit-animation: tilt-out 1s;
+        -moz-animation: tilt-out 1s;
+        -o-animation: tilt-out 1s;
+    }
